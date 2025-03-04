@@ -89,7 +89,7 @@ const Directions = {
 };
 
 
-const API_KEY = "Aqui tu KEY"
+const API_KEY = 'rj2n0wdjiry5ncok58u0sej5vgodz9jrlf8gm75p'
 
 function getWeatherIcon(iconCode) {
     return weatherIcons[iconCode] || weatherIcons.default;
@@ -180,7 +180,7 @@ formulario.onsubmit = async function (e) {
     const data = await getBigData(city)
     if (data) {
         datosGlobales = data;
-        // Aquí está la corrección
+      
         const pronostico = data.weather.daily.data.map((dia,index) => {
             const { day, weather, summary, icon,all_day } = dia
             const iconPath = `/img/${getWeatherIcon(icon)}`;
@@ -292,7 +292,7 @@ formulario.onsubmit = async function (e) {
     }
 }
 
-// Update the click handler for resultado
+// handler que al hacer click actualiza la informacion del card
 resultado.onclick = function (e) {
     const forecastCard = e.target.closest(".card");
     if (forecastCard) {
@@ -304,13 +304,13 @@ resultado.onclick = function (e) {
 function swapTodayCard(index) {
     if (!datosGlobales?.weather?.daily?.data) return;
     
-    // Get the selected day's data
-    const selectedDay = datosGlobales.weather.daily.data[index]; // +1 because daily data starts from today
+    // Toda la informacion del dia seleccionado
+    const selectedDay = datosGlobales.weather.daily.data[index]; 
     const iconPath = `/img/${getWeatherIcon(selectedDay.icon)}`;
     const newDate = FormatFecha(selectedDay.day);
     const DirectionWind = getDirectionWind(selectedDay.all_day.wind.dir);
 
-    // Create the new Today card with the selected day's data
+    // crea un nuevo card para suplantar al que esta por defecto 
     const newTodayCard = `
 <div class="card-today" data-index="${index}" >
                 <section class="weather-card-today">

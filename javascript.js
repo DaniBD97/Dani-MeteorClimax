@@ -1,4 +1,4 @@
-//rj2n0wdjiry5ncok58u0sej5vgodz9jrlf8gm75p
+
 
 //url https://www.meteosource.com/api/v1/free/point?place_id=london&sections=all&timezone=UTC&language=en&units=metric&key=YOUR-API-KEY
 

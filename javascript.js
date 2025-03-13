@@ -89,7 +89,7 @@ const Directions = {
 };
 
 
-const API_KEY = 'rj2n0wdjiry5ncok58u0sej5vgodz9jrlf8gm75p'
+const API_KEY = 'KEY'
 
 function getWeatherIcon(iconCode) {
     return weatherIcons[iconCode] || weatherIcons.default;
